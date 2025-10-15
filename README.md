@@ -1,4 +1,3 @@
-conteudo_readme = '''# Projeto de Testes Automatizados
 
 **Sistema de Gerenciamento de Usuários e Tarefas**
 
