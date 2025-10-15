@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Manager</h1>
+            <nav id="navigation" class="hidden">
+                <span id="welcome-message"></span>
+                <button id="logout-btn" class="btn-secondary">Sair</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Tela de Login/Registro -->
+            <section id="auth-section" class="auth-container">
+                <div class="auth-tabs">
+                    <button id="login-tab" class="tab-btn active" data-tab="login">Entrar</button>
+                    <button id="register-tab" class="tab-btn" data-tab="register">Cadastrar</button>
+                </div>
+
+                <!-- Formulário de Login -->
+                <form id="login-form" class="auth-form active">
+                    <h2>Fazer Login</h2>
+                    <div class="form-group">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Senha:</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Entrar</button>
+                    <div id="login-message" class="message"></div>
+                </form>
+
+                <!-- Formulário de Registro -->
+                <form id="register-form" class="auth-form">
+                    <h2>Criar Conta</h2>
+                    <div class="form-group">
+                        <label for="register-username">Nome de usuário:</label>
+                        <input type="text" id="register-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Senha:</label>
+                        <input type="password" id="register-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirmar Senha:</label>
+                        <input type="password" id="register-confirm-password" name="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Cadastrar</button>
+                    <div id="register-message" class="message"></div>
+                </form>
+            </section>
+
+            <!-- Área das Tarefas -->
+            <section id="tasks-section" class="tasks-container hidden">
+                <div class="tasks-header">
+                    <h2>Minhas Tarefas</h2>
+                    <button id="add-task-btn" class="btn-primary">+ Nova Tarefa</button>
+                </div>
+
+                <!-- Formulário para Nova Tarefa -->
+                <form id="task-form" class="task-form hidden">
+                    <h3 id="task-form-title">Nova Tarefa</h3>
+                    <div class="form-group">
+                        <label for="task-title">Título:</label>
+                        <input type="text" id="task-title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-description">Descrição:</label>
+                        <textarea id="task-description" name="description" rows="3"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Salvar</button>
+                        <button type="button" id="cancel-task-btn" class="btn-secondary">Cancelar</button>
+                    </div>
+                    <div id="task-message" class="message"></div>
+                </form>
+
+                <!-- Lista de Tarefas -->
+                <div id="tasks-list" class="tasks-list">
+                    <div id="no-tasks" class="no-tasks">
+                        <p>Nenhuma tarefa encontrada. Clique em "Nova Tarefa" para começar!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
